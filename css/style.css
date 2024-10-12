@@ -83,7 +83,7 @@ nav ul li a:hover {
 
 .hero p {
     font-size: 20px;
-    color: var(--light-text-color);
+    color: var(--secondary-color);
     max-width: 600px;
     margin: 0 auto 40px;
 }
