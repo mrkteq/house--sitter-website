@@ -41,9 +41,40 @@ header {
     padding: 20px 0;
 }
 
-.logo h1 {
-    font-size: 24px;
-    color: var(--primary-color);
+/* Update existing header styles */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: block;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 50px; /* Adjust this value based on your logo size */
+    width: auto;
+    display: block;
+}
+
+/* Hide text but keep it accessible for screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo-image {
+        height: 40px; /* Slightly smaller on mobile */
+    }
 }
 
 nav ul {
@@ -136,6 +167,132 @@ main {
     color: var(--secondary-color);
     margin-bottom: 20px;
 }
+
+/* startt testimonials */
+
+/* Testimonials Carousel */
+.testimonials {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hide radio buttons but keep them functional */
+.carousel input[type="radio"] {
+    display: none;
+}
+
+/* Slides Container */
+.carousel-slides {
+    position: relative;
+    height: 300px; /* Adjust based on content */
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* Show slide based on radio selection */
+#slide1:checked ~ .carousel-slides .slide:nth-child(1),
+#slide2:checked ~ .carousel-slides .slide:nth-child(2),
+#slide3:checked ~ .carousel-slides .slide:nth-child(3) {
+    opacity: 1;
+}
+
+/* Testimonial Card Styling */
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.testimonial-text {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.testimonial-author {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--light-text-color);
+}
+
+/* Navigation Dots */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.carousel-nav label {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    opacity: 0.3;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-nav label:hover {
+    opacity: 0.8;
+}
+
+/* Active dot styling */
+#slide1:checked ~ .carousel-nav label:nth-child(1),
+#slide2:checked ~ .carousel-nav label:nth-child(2),
+#slide3:checked ~ .carousel-nav label:nth-child(3) {
+    opacity: 1;
+}
+
+/* Auto-advance animation */
+@keyframes carousel {
+    0%, 30% { opacity: 1; }
+    33%, 100% { opacity: 0; }
+}
+
+.carousel:not(:hover) .slide {
+    animation: carousel 12s infinite;
+}
+
+.carousel:not(:hover) .slide:nth-child(1) { animation-delay: 0s; }
+.carousel:not(:hover) .slide:nth-child(2) { animation-delay: 4s; }
+.carousel:not(:hover) .slide:nth-child(3) { animation-delay: 8s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonials {
+        padding: 40px 0;
+    }
+    
+    .carousel-slides {
+        height: 350px; /* Adjust for mobile content */
+    }
+}
+
+/* end testimonials */
 
 footer {
     background-color: var(--primary-color);
