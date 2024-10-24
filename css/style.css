@@ -236,11 +236,11 @@ nav ul li a:hover {
 /* Image adjustments for dark mode */
 @media (prefers-color-scheme: dark) {
     img {
-        filter: brightness(0.9);
+        filter: brightness(0.7);
     }
     
     .logo-image {
-        filter: brightness(1.1);
+        filter: brightness(4);
     }
 }
 
