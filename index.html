@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Companions</title>
+    <meta name="description" content="Trusted Pet & House Care provides reliable and caring house sitting services. Trust us with your home and pets for peace of mind while you're away.">
+    <meta name="keywords" content="house sitting, pet care, plant care, home security, trusted pet & house care">
+    <title>Trusted Pet & House Care</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -13,16 +15,16 @@
             <div class="header-content">
                 <div class="logo">
                     <a href="/">
-                        <img src="./img/logo.jpg" alt="Casa Companions" class="logo-image">
-                        <span class="visually-hidden">Casa Companions</span>
+                        <img src="./img/logo.jpg" alt="Trusted Pet & House Care" class="logo-image" loading="lazy">
+                        <span class="visually-hidden">Trusted Pet & House Care</span>
                     </a>
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#about" aria-label="Go to About section">About</a></li>
+                        <li><a href="#services" aria-label="Go to Services section">Services</a></li>
+                        <li><a href="#testimonials" aria-label="Go to Testimonials section">Testimonials</a></li>
+                        <li><a href="#contact" aria-label="Go to Contact section">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -31,7 +33,7 @@
 
     <section class="hero">
         <div class="container">
-            <h2>Your Home in Safe Hands</h2>
+            <h1>Your Home in Safe Hands</h1>
             <p>Reliable and caring house sitting services for your peace of mind</p>
             <a href="#contact" class="cta-button">Get in Touch</a>
         </div>
@@ -47,7 +49,7 @@
             <h2>Our Services</h2>
             <div class="services-grid">
                 <div class="service-item">
-                    <i class="fas fa-paw"></i>
+                    <i class="fas fa-paw" aria-hidden="true"></i><span class="visually-hidden">Pet Care</span>
                     <h3>Pet Care</h3>
                     <p>Daily walks and companionship for your furry friends</p>
                 </div>
@@ -57,12 +59,13 @@
                     <p>Watering and maintenance of your garden and indoor plants</p>
                 </div>
                 <div class="service-item">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" aria-hidden="true"></i><span class="visually-hidden">Mail Collection</span>
                     <h3>Mail Collection</h3>
                     <p>Secure handling of your mail and packages</p>
                 </div>
                 <div class="service-item">
-                    <i class="fas fa-home"></i>
+                    <i class="fas fa-home" aria-hidden="true"></i><span class="visually-hidden">Home Security</span>
+                    fa-envelope
                     <h3>Home Security</h3>
                     <p>Regular checks to ensure your property is safe and secure</p>
                 </div>
@@ -104,22 +107,21 @@
         <section id="contact" class="section">
             <h2>Contact Us</h2>
             <p>Ready to book our services or have any questions? Get in touch with us!</p>
-            <a href="#" class="cta-button" id="contact-button">Contact Now</a>
+            <form action="mailto:cltucker07@gmail.com" method="post" enctype="text/plain">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+              </form>
         </section>
 
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Casa Companions. All rights reserved.</p>
+            <p>&copy; 2024 Trusted Pet & House Care. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('contact-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Thank you for your interest! \nPlease call us on (+34) 618-758-000 \nor email cltucker07@gmail.com');
-        });
-    </script>
 </body>
 </html>
