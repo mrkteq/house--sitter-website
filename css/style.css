@@ -1,13 +1,30 @@
+/* Light mode variables */
 :root {
     --primary-color: #789254;
     --primary-dark: #5d7341;
     --secondary-color: #f5a623;
     --background-color: #f9f9f9;
-    --text-color: #333;
-    --light-text: #666;
-    --white: #ffffff;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --light-text: #666666;
+    --border-color: #eeeeee;
     --shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
     --transition: all 0.3s ease;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #8fa76a;      /* Lighter shade for better contrast */
+        --primary-dark: #789254;       /* Adjusted for dark mode */
+        --secondary-color: #ffb84d;    /* Brighter orange for dark mode */
+        --background-color: #121212;   /* Dark background */
+        --card-background: #1e1e1e;    /* Slightly lighter than background */
+        --text-color: #e0e0e0;         /* Light gray for better readability */
+        --light-text: #b0b0b0;         /* Adjusted for dark mode */
+        --border-color: #2d2d2d;       /* Darker borders */
+        --shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    }
 }
 
 * {
@@ -26,6 +43,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -37,7 +55,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: var(--white);
+    background-color: var(--card-background);
     box-shadow: var(--shadow);
     position: fixed;
     width: 100%;
@@ -91,7 +109,7 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     margin-top: 120px;
-    background-color: #f0f4ed; /* Light sage background to complement the illustration */
+    background-color: var(--background-color);
     text-align: center;
     padding: 4rem 1rem;
     overflow: hidden;
@@ -101,12 +119,19 @@ nav ul li a:hover {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.8);
     width: 100%;
     max-width: 500px;
     height: auto;
     z-index: 1;
-    opacity: 0.15; /* Subtle background presence */
+    opacity: 0.15;
+    filter: brightness(var(--illustration-brightness, 1));
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero-illustration {
+        --illustration-brightness: 0.8;
+    }
 }
 
 .hero-content {
@@ -170,7 +195,8 @@ nav ul li a:hover {
 }
 
 .service-item {
-    background-color: var(--white);
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow);
@@ -200,11 +226,22 @@ nav ul li a:hover {
 }
 
 .testimonial-card {
-    background-color: var(--background-color);
+    background-color: var(--card-background);
     padding: 2rem;
     border-radius: 12px;
     margin: 4rem 0;
     box-shadow: var(--shadow);
+}
+
+/* Image adjustments for dark mode */
+@media (prefers-color-scheme: dark) {
+    img {
+        filter: brightness(0.9);
+    }
+    
+    .logo-image {
+        filter: brightness(1.1);
+    }
 }
 
 .testimonial-text {
@@ -221,7 +258,7 @@ nav ul li a:hover {
     max-width: 600px;
     margin: 0 auto;
     padding: 2rem;
-    background-color: var(--white);
+    background-color: var(--card-background);
     border-radius: 12px;
     box-shadow: var(--shadow);
 }
@@ -245,6 +282,9 @@ textarea {
     border: 2px solid #eee;
     border-radius: 8px;
     transition: var(--transition);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
 }
 
 input[type="email"]:focus,
@@ -362,5 +402,21 @@ footer {
 
     .hero p {
         font-size: 1.25rem;
+    }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    .service-item:hover,
+    .cta-button:hover {
+        transform: none;
+    }
+    
+    * {
+        transition: none !important;
     }
 }
