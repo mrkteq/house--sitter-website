@@ -319,10 +319,12 @@ input[type="checkbox"] {
 }
 
 .form-group-checkbox label {
-    font-weight: 600;
+    font-weight: normal;
     color: var(--primary-color);
     cursor: pointer;
     margin-bottom: 0;
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
 button {
