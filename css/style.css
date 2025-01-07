@@ -5,6 +5,8 @@
     --secondary-color: #f5a623;
     --background-color: #f9f9f9;
     --card-background: #ffffff;
+    --facebook-default: #1877F2;
+    --facebook-hover: #145DBF;
     --text-color: #333333;
     --light-text: #666666;
     --placeholder-text: #bbb;
@@ -380,7 +382,7 @@ footer {
     justify-content: center;
     text-decoration: none;
     color: var(--white);
-    background-color: var(--primary-color);
+    background-color: var(--facebook-default);
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     transition: var(--transition);
@@ -388,7 +390,7 @@ footer {
 }
 
 .facebook-link:hover {
-    background-color: var(--primary-dark);
+    background-color: var(--facebook-hover);
     transform: translateY(-2px);
 }
 
